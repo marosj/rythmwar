@@ -22,6 +22,11 @@
             <version>1.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.rythmengine</groupId>
+            <artifactId>rythm-engine</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>

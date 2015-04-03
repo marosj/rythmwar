@@ -1,5 +1,7 @@
 package com.marosj.servlet;
 
+import org.rythmengine.Rythm;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +20,7 @@ public class DisplayServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        out.println("test");
+        out.println(Rythm.render("Hello @who!", "World"));
 
         out.close();
     }
