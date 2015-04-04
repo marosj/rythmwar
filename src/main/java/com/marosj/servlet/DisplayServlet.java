@@ -1,6 +1,8 @@
 package com.marosj.servlet;
 
+import com.marosj.web.api.Menu;
 import org.rythmengine.Rythm;
+import org.rythmengine.extension.ICodeType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +36,9 @@ public class DisplayServlet extends HttpServlet {
 
         Path mainTemplate = Paths.get("c:/tmp/main.rtm");
 
-        out.println(Rythm.render(mainTemplate.toFile(), "World"));
+        Menu menu = new Menu();
+
+        out.println(Rythm.engine().prepare(ICodeType.DefImpl.HTML).render(mainTemplate.toFile(), menu, "Maros"));
 
         out.close();
     }

@@ -1,9 +1,22 @@
-@args String who
+@import com.marosj.web.api.*
+@args Menu menu
 <html>
 <head>
 <title>Hello world from Rythm</title>
 </head>
 <body>
-<h1>Hello @who from Rythm</h1>
+<h1>Hello @menu.actualItem().title@ from Rythm</h1>
+<ul>
+@for(MaskInfo elem : menu.pathTo(menu.actualItem()).elements()) {
+  <li>@elem.title@</li>
+}
+</ul>
+
+<ul>
+@for(MaskInfo elem : menu.pathTo(menu.elements().get(2)).elements()) {
+  <li>@elem.title@</li>
+}
+</ul>
+
 </body>
 </html>
